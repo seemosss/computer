@@ -10,34 +10,37 @@ public class SimpleOomage implements Oomage {
     protected int blue;
 
     private static final double WIDTH = 0.01;
-    private static final boolean USE_PERFECT_HASH = false;
+    private static final boolean USE_PERFECT_HASH = true;
 
     @Override
     public boolean equals(Object o) {
         // TODO: Write this method.
-        return false;
+        if (o.getClass() != this.getClass())
+            return false;
+        SimpleOomage that = (SimpleOomage) o;
+        return (this.red == that.red) && (this.green == that.green) && (this.blue == that.blue);
     }
 
     /* Uncomment this method after you've written
        equals and failed the testHashCodeAndEqualsConsistency
-       test.
+       test.*/
     @Override
     public int hashCode() {
         if (!USE_PERFECT_HASH) {
             return red + green + blue;
         } else {
             // TODO: Write a perfect hash function for Simple Oomages.
-            return 0;
+            return red * 1000000 + green * 1000 + blue;
         }
-    }*/
+    }
 
     public SimpleOomage(int r, int g, int b) {
         if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
             throw new IllegalArgumentException();
         }
-        if ((r % 5 != 0) || (g % 5 != 0) || (b % 5 != 0)) {
+        /*if ((r % 5 != 0) || (g % 5 != 0) || (b % 5 != 0)) {
             throw new IllegalArgumentException("red/green/blue values must all be multiples of 5!");
-        }
+        }*/
         red = r;
         green = g;
         blue = b;
@@ -50,9 +53,9 @@ public class SimpleOomage implements Oomage {
     }
 
     public static SimpleOomage randomSimpleOomage() {
-        int red = StdRandom.uniform(0, 51) * 5;
-        int green = StdRandom.uniform(0, 51) * 5;
-        int blue = StdRandom.uniform(0, 51) * 5;
+        int red = StdRandom.uniform(0, 255);
+        int green = StdRandom.uniform(0, 255);
+        int blue = StdRandom.uniform(0, 255);
         return new SimpleOomage(red, green, blue);
     }
 
