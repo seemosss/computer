@@ -29,7 +29,7 @@ public class TestComplexOomage {
         for (int i = 0; i < N; i += 1) {
             oomages.add(ComplexOomage.randomComplexOomage());
         }
-
+        boolean b = (OomageTestUtility.haveNiceHashCodeSpread(oomages, 10));
         assertTrue(OomageTestUtility.haveNiceHashCodeSpread(oomages, 10));
     }
 

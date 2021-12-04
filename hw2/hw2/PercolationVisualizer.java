@@ -16,13 +16,13 @@
  *
  ******************************************************************************/
 package hw2;
-import java.awt.Font;
-
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
 
+import java.awt.*;
+
 public class PercolationVisualizer {
-/*
+
     // delay in miliseconds (controls animation speed)
     private static final int DELAY = 100;
 
@@ -81,7 +81,7 @@ public class PercolationVisualizer {
     }
 
     public static void main(String[] args) {
-        String filename = args[0];
+        String filename = "C:\\Users\\周润\\Desktop\\CS61B\\skeleton-sp18\\hw2\\inputFiles\\input20.txt";
         simulateFromFile(filename);
-    }*/
+    }
 }

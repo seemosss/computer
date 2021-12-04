@@ -38,7 +38,7 @@ public class NBody {
         StdDraw.picture(0, 0, imageToDraw);
 
         for(Planet pi:p){
-            pi.Draw();
+            pi.draw();
         }
         StdDraw.enableDoubleBuffering();
         double t = 0;
@@ -52,7 +52,7 @@ public class NBody {
             StdDraw.picture(0, 0, imageToDraw);
             for(int i = 0; i < p.length; i++){
                 p[i].update(dt, xforces[i], yforces[i]);
-                p[i].Draw();
+                p[i].draw();
             }
             StdDraw.show();
             StdDraw.pause(10);

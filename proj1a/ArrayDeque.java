@@ -61,7 +61,7 @@ public class ArrayDeque<T> {
 
     public void printDeque() {
         int start = nextfirst + 1;
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             start = start % items.length;
             System.out.print(items[start] + " ");
             start++;
