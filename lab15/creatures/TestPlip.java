@@ -1,5 +1,5 @@
 package creatures;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import static org.junit.Assert.*;
 import java.util.HashMap;
 import java.awt.Color;
